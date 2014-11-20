@@ -36,7 +36,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="521" y="870"/>
+            <point key="canvasLocation" x="604" y="718"/>
         </scene>
         <!--Targets Hit Scene-->
         <scene sceneID="Czu-Rj-t4Q">
@@ -64,7 +64,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="776" y="1214"/>
+            <point key="canvasLocation" x="859" y="1064"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="psS-1I-mBh">
@@ -78,7 +78,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="776" y="871"/>
+            <point key="canvasLocation" x="859" y="721"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
@@ -110,7 +110,7 @@
                     </connections>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="521" y="564"/>
+            <point key="canvasLocation" x="264" y="695"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -130,7 +130,7 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="1024" y="564"/>
+            <point key="canvasLocation" x="264" y="1064"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="hcr-rJ-zvy">
@@ -141,7 +141,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1024" y="876"/>
+            <point key="canvasLocation" x="1107" y="726"/>
         </scene>
     </scenes>
 </document>
