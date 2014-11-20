@@ -1,0 +1,16 @@
+{
+    "aps": {
+        "alert": "AAPL",
+        "title": "Target Hit",
+        "category": "PriceHit"
+    },
+
+    "WatchKit Simulator Actions": [
+        {
+            "title": "Buy",
+            "identifier": "buyAction"
+        }
+    ],
+
+    "info": "testing payload for notifications"
+}

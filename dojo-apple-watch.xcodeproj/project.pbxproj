@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0166B7F1A1CF08500B4A9A2 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0166B7E1A1CF08500B4A9A2 /* WatchKit.framework */; };
+		F0166B851A1CF08500B4A9A2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0166B841A1CF08500B4A9A2 /* InterfaceController.swift */; };
+		F0166B871A1CF08500B4A9A2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0166B861A1CF08500B4A9A2 /* NotificationController.swift */; };
+		F0166B891A1CF08500B4A9A2 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0166B881A1CF08500B4A9A2 /* GlanceController.swift */; };
+		F0166B8B1A1CF08500B4A9A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0166B8A1A1CF08500B4A9A2 /* Images.xcassets */; };
+		F0166B8F1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */; };
+		F0166B961A1CF08500B4A9A2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0166B951A1CF08500B4A9A2 /* Interface.storyboard */; };
+		F0166B981A1CF08500B4A9A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0166B971A1CF08500B4A9A2 /* Images.xcassets */; };
+		F0166B9B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0166BA61A1CF16200B4A9A2 /* LaunchScreen_dev.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0166BA51A1CF16200B4A9A2 /* LaunchScreen_dev.xib */; };
+		F09852021A1D3CEA007E2D44 /* InterfaceHitsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09852011A1D3CEA007E2D44 /* InterfaceHitsController.swift */; };
+		F0F264E51A1D2757007A2066 /* XMCShared.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F264E41A1D2757007A2066 /* XMCShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0F264F71A1D2757007A2066 /* XMCShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; };
+		F0F264F81A1D2757007A2066 /* XMCShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0F265001A1D27A4007A2066 /* XMCEquities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */; };
+		F0F265011A1D2988007A2066 /* XMCEquities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */; };
+		F0F265031A1D2B25007A2066 /* XMCShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; };
+		F0F265041A1D2CDF007A2066 /* XMCEquities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */; };
+		F0FFD1991A1CDAA700738E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD1981A1CDAA700738E63 /* AppDelegate.swift */; };
+		F0FFD19B1A1CDAA700738E63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD19A1A1CDAA700738E63 /* ViewController.swift */; };
+		F0FFD19E1A1CDAA700738E63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FFD19C1A1CDAA700738E63 /* Main.storyboard */; };
+		F0FFD1A01A1CDAA700738E63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FFD19F1A1CDAA700738E63 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0166B901A1CF08500B4A9A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0FFD18B1A1CDAA700738E63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0166B8D1A1CF08500B4A9A2;
+			remoteInfo = "dojo-apple-watch Watch App";
+		};
+		F0166B991A1CF08500B4A9A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0FFD18B1A1CDAA700738E63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0166B7B1A1CF08500B4A9A2;
+			remoteInfo = "dojo-apple-watch WatchKit Extension";
+		};
+		F0F264F51A1D2757007A2066 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0FFD18B1A1CDAA700738E63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0F264DF1A1D2757007A2066;
+			remoteInfo = shared;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0166BA21A1CF08500B4A9A2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F0166B9B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0166BF41A1D080000B4A9A2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F0F264F81A1D2757007A2066 /* XMCShared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "dojo-apple-watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0166B7E1A1CF08500B4A9A2 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		F0166B821A1CF08500B4A9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0166B841A1CF08500B4A9A2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F0166B861A1CF08500B4A9A2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F0166B881A1CF08500B4A9A2 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		F0166B8A1A1CF08500B4A9A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dojo-apple-watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0166B941A1CF08500B4A9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0166B951A1CF08500B4A9A2 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		F0166B971A1CF08500B4A9A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0166BA51A1CF16200B4A9A2 /* LaunchScreen_dev.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen_dev.xib; sourceTree = "<group>"; };
+		F01774331A1D447C006912F2 /* PushNotificationPayload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PushNotificationPayload.json; sourceTree = "<group>"; };
+		F09852011A1D3CEA007E2D44 /* InterfaceHitsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceHitsController.swift; sourceTree = "<group>"; };
+		F0F264E01A1D2757007A2066 /* XMCShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMCShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0F264E31A1D2757007A2066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F264E41A1D2757007A2066 /* XMCShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMCShared.h; sourceTree = "<group>"; };
+		F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCEquities.swift; sourceTree = "<group>"; };
+		F0FFD1931A1CDAA700738E63 /* dojo-apple-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dojo-apple-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0FFD1971A1CDAA700738E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0FFD1981A1CDAA700738E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0FFD19A1A1CDAA700738E63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0FFD19D1A1CDAA700738E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0FFD19F1A1CDAA700738E63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0166B791A1CF08500B4A9A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0F265031A1D2B25007A2066 /* XMCShared.framework in Frameworks */,
+				F0166B7F1A1CF08500B4A9A2 /* WatchKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0F264DC1A1D2757007A2066 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0FFD1901A1CDAA700738E63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0F264F71A1D2757007A2066 /* XMCShared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0166B7D1A1CF08500B4A9A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0166B7E1A1CF08500B4A9A2 /* WatchKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0166B801A1CF08500B4A9A2 /* WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F0166B841A1CF08500B4A9A2 /* InterfaceController.swift */,
+				F09852011A1D3CEA007E2D44 /* InterfaceHitsController.swift */,
+				F0166B861A1CF08500B4A9A2 /* NotificationController.swift */,
+				F0166B881A1CF08500B4A9A2 /* GlanceController.swift */,
+				F0166B8A1A1CF08500B4A9A2 /* Images.xcassets */,
+				F0166B811A1CF08500B4A9A2 /* Supporting Files */,
+			);
+			name = "WatchKit Extension";
+			path = "dojo-apple-watch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F0166B811A1CF08500B4A9A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0166B821A1CF08500B4A9A2 /* Info.plist */,
+				F01774331A1D447C006912F2 /* PushNotificationPayload.json */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0166B921A1CF08500B4A9A2 /* Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F0166B951A1CF08500B4A9A2 /* Interface.storyboard */,
+				F0166B971A1CF08500B4A9A2 /* Images.xcassets */,
+				F0166B931A1CF08500B4A9A2 /* Supporting Files */,
+			);
+			name = "Watch App";
+			path = "dojo-apple-watch Watch App";
+			sourceTree = "<group>";
+		};
+		F0166B931A1CF08500B4A9A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0166B941A1CF08500B4A9A2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0F264E11A1D2757007A2066 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				F0F264E41A1D2757007A2066 /* XMCShared.h */,
+				F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */,
+				F0F264E21A1D2757007A2066 /* Supporting Files */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		F0F264E21A1D2757007A2066 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0F264E31A1D2757007A2066 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0FFD18A1A1CDAA700738E63 = {
+			isa = PBXGroup;
+			children = (
+				F0FFD1951A1CDAA700738E63 /* iOS App */,
+				F0166B801A1CF08500B4A9A2 /* WatchKit Extension */,
+				F0166B921A1CF08500B4A9A2 /* Watch App */,
+				F0F264E11A1D2757007A2066 /* shared */,
+				F0166B7D1A1CF08500B4A9A2 /* Frameworks */,
+				F0FFD1941A1CDAA700738E63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0FFD1941A1CDAA700738E63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0FFD1931A1CDAA700738E63 /* dojo-apple-watch.app */,
+				F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */,
+				F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */,
+				F0F264E01A1D2757007A2066 /* XMCShared.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0FFD1951A1CDAA700738E63 /* iOS App */ = {
+			isa = PBXGroup;
+			children = (
+				F0FFD1981A1CDAA700738E63 /* AppDelegate.swift */,
+				F0FFD19A1A1CDAA700738E63 /* ViewController.swift */,
+				F0FFD19C1A1CDAA700738E63 /* Main.storyboard */,
+				F0166BA51A1CF16200B4A9A2 /* LaunchScreen_dev.xib */,
+				F0FFD19F1A1CDAA700738E63 /* Images.xcassets */,
+				F0FFD1961A1CDAA700738E63 /* Supporting Files */,
+			);
+			name = "iOS App";
+			path = "dojo-apple-watch";
+			sourceTree = "<group>";
+		};
+		F0FFD1961A1CDAA700738E63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0FFD1971A1CDAA700738E63 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F0F264DD1A1D2757007A2066 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0F264E51A1D2757007A2066 /* XMCShared.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F0166B7B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0166B9F1A1CF08500B4A9A2 /* Build configuration list for PBXNativeTarget "dojo-apple-watch WatchKit Extension" */;
+			buildPhases = (
+				F0166B781A1CF08500B4A9A2 /* Sources */,
+				F0166B791A1CF08500B4A9A2 /* Frameworks */,
+				F0166B7A1A1CF08500B4A9A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0166B911A1CF08500B4A9A2 /* PBXTargetDependency */,
+			);
+			name = "dojo-apple-watch WatchKit Extension";
+			productName = "dojo-apple-watch WatchKit Extension";
+			productReference = F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		F0166B8D1A1CF08500B4A9A2 /* dojo-apple-watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0166B9C1A1CF08500B4A9A2 /* Build configuration list for PBXNativeTarget "dojo-apple-watch Watch App" */;
+			buildPhases = (
+				F0166B8C1A1CF08500B4A9A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dojo-apple-watch Watch App";
+			productName = "dojo-apple-watch Watch App";
+			productReference = F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+		F0F264DF1A1D2757007A2066 /* XMCShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0F264F91A1D2757007A2066 /* Build configuration list for PBXNativeTarget "XMCShared" */;
+			buildPhases = (
+				F0F264DB1A1D2757007A2066 /* Sources */,
+				F0F264DC1A1D2757007A2066 /* Frameworks */,
+				F0F264DD1A1D2757007A2066 /* Headers */,
+				F0F264DE1A1D2757007A2066 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XMCShared;
+			productName = shared;
+			productReference = F0F264E01A1D2757007A2066 /* XMCShared.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F0FFD1921A1CDAA700738E63 /* dojo-apple-watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0FFD1B21A1CDAA700738E63 /* Build configuration list for PBXNativeTarget "dojo-apple-watch" */;
+			buildPhases = (
+				F0FFD18F1A1CDAA700738E63 /* Sources */,
+				F0FFD1901A1CDAA700738E63 /* Frameworks */,
+				F0FFD1911A1CDAA700738E63 /* Resources */,
+				F0166BA21A1CF08500B4A9A2 /* Embed App Extensions */,
+				F0166BF41A1D080000B4A9A2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0166B9A1A1CF08500B4A9A2 /* PBXTargetDependency */,
+				F0F264F61A1D2757007A2066 /* PBXTargetDependency */,
+			);
+			name = "dojo-apple-watch";
+			productName = "dojo-apple-watch";
+			productReference = F0FFD1931A1CDAA700738E63 /* dojo-apple-watch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0FFD18B1A1CDAA700738E63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "David McGraw";
+				TargetAttributes = {
+					F0166B7B1A1CF08500B4A9A2 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					F0166B8D1A1CF08500B4A9A2 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					F0F264DF1A1D2757007A2066 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					F0FFD1921A1CDAA700738E63 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = F0FFD18E1A1CDAA700738E63 /* Build configuration list for PBXProject "dojo-apple-watch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0FFD18A1A1CDAA700738E63;
+			productRefGroup = F0FFD1941A1CDAA700738E63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0FFD1921A1CDAA700738E63 /* dojo-apple-watch */,
+				F0166B7B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension */,
+				F0166B8D1A1CF08500B4A9A2 /* dojo-apple-watch Watch App */,
+				F0F264DF1A1D2757007A2066 /* XMCShared */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0166B7A1A1CF08500B4A9A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0166B8F1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app in Resources */,
+				F0166B8B1A1CF08500B4A9A2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0166B8C1A1CF08500B4A9A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0166B961A1CF08500B4A9A2 /* Interface.storyboard in Resources */,
+				F0166B981A1CF08500B4A9A2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0F264DE1A1D2757007A2066 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0FFD1911A1CDAA700738E63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0FFD19E1A1CDAA700738E63 /* Main.storyboard in Resources */,
+				F0166BA61A1CF16200B4A9A2 /* LaunchScreen_dev.xib in Resources */,
+				F0FFD1A01A1CDAA700738E63 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0166B781A1CF08500B4A9A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0166B871A1CF08500B4A9A2 /* NotificationController.swift in Sources */,
+				F0F265041A1D2CDF007A2066 /* XMCEquities.swift in Sources */,
+				F09852021A1D3CEA007E2D44 /* InterfaceHitsController.swift in Sources */,
+				F0166B851A1CF08500B4A9A2 /* InterfaceController.swift in Sources */,
+				F0166B891A1CF08500B4A9A2 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0F264DB1A1D2757007A2066 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0F265001A1D27A4007A2066 /* XMCEquities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0FFD18F1A1CDAA700738E63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0F265011A1D2988007A2066 /* XMCEquities.swift in Sources */,
+				F0FFD19B1A1CDAA700738E63 /* ViewController.swift in Sources */,
+				F0FFD1991A1CDAA700738E63 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0166B911A1CF08500B4A9A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0166B8D1A1CF08500B4A9A2 /* dojo-apple-watch Watch App */;
+			targetProxy = F0166B901A1CF08500B4A9A2 /* PBXContainerItemProxy */;
+		};
+		F0166B9A1A1CF08500B4A9A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0166B7B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension */;
+			targetProxy = F0166B991A1CF08500B4A9A2 /* PBXContainerItemProxy */;
+		};
+		F0F264F61A1D2757007A2066 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0F264DF1A1D2757007A2066 /* XMCShared */;
+			targetProxy = F0F264F51A1D2757007A2066 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0FFD19C1A1CDAA700738E63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0FFD19D1A1CDAA700738E63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0166B9D1A1CF08500B4A9A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = dojo_apple_watch_WatchKit_Extension;
+				INFOPLIST_FILE = "dojo-apple-watch Watch App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		F0166B9E1A1CF08500B4A9A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = dojo_apple_watch_WatchKit_Extension;
+				INFOPLIST_FILE = "dojo-apple-watch Watch App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		F0166BA01A1CF08500B4A9A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "dojo-apple-watch WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F0166BA11A1CF08500B4A9A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "dojo-apple-watch WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F0F264FA1A1D2757007A2066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = shared/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F0F264FB1A1D2757007A2066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = shared/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F0FFD1B01A1CDAA700738E63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0FFD1B11A1CDAA700738E63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0FFD1B31A1CDAA700738E63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "dojo-apple-watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "dojo-apple-watch";
+			};
+			name = Debug;
+		};
+		F0FFD1B41A1CDAA700738E63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "dojo-apple-watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "dojo-apple-watch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0166B9C1A1CF08500B4A9A2 /* Build configuration list for PBXNativeTarget "dojo-apple-watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0166B9D1A1CF08500B4A9A2 /* Debug */,
+				F0166B9E1A1CF08500B4A9A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0166B9F1A1CF08500B4A9A2 /* Build configuration list for PBXNativeTarget "dojo-apple-watch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0166BA01A1CF08500B4A9A2 /* Debug */,
+				F0166BA11A1CF08500B4A9A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0F264F91A1D2757007A2066 /* Build configuration list for PBXNativeTarget "XMCShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0F264FA1A1D2757007A2066 /* Debug */,
+				F0F264FB1A1D2757007A2066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0FFD18E1A1CDAA700738E63 /* Build configuration list for PBXProject "dojo-apple-watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0FFD1B01A1CDAA700738E63 /* Debug */,
+				F0FFD1B11A1CDAA700738E63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0FFD1B21A1CDAA700738E63 /* Build configuration list for PBXNativeTarget "dojo-apple-watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0FFD1B31A1CDAA700738E63 /* Debug */,
+				F0FFD1B41A1CDAA700738E63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0FFD18B1A1CDAA700738E63 /* Project object */;
+}
