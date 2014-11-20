@@ -1,1 +1,1 @@
-Example WatchKit App
+Let's explore Apple Watch. Example WatchKit App
