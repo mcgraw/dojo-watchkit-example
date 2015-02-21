@@ -16,8 +16,8 @@ class GlanceController: WKInterfaceController {
     @IBOutlet weak var position3: WKInterfaceLabel!
     @IBOutlet weak var position4: WKInterfaceLabel!
     
-    override init(context: AnyObject?) {
-        super.init(context: context)
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         
         clearData()
         
@@ -29,7 +29,7 @@ class GlanceController: WKInterfaceController {
         
         // If this glance is touched, this will notify our main interface that a different
         // view should be shown
-        self.updateUserActivity("glance", userInfo: ["identifier": "targetsHit"])
+        self.updateUserActivity("glance", userInfo: ["identifier": "targetsHit"], webpageURL: nil)
     }
 
     // MARK: Data Handling

@@ -17,20 +17,18 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var position3: WKInterfaceLabel!
     @IBOutlet weak var position4: WKInterfaceLabel!
 
-    override init(context: AnyObject?) {
-        super.init(context: context)
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         
         clearData()
         
         loadData()
     }
     
-    override func actionForUserActivity(userActivity: [NSObject : AnyObject]?, context: AutoreleasingUnsafeMutablePointer<AnyObject?>) -> String? {
-        var val = ""
-        if let dict: Dictionary<String, String> = userActivity as? Dictionary<String, String> {
-            val = dict["identifier"]!
+    override func handleUserActivity(userInfo: [NSObject : AnyObject]!) {
+        if let val: String = userInfo["identifier"] as? String {
+            presentControllerWithName("targetsHit", context: nil)
         }
-        return val
     }
     
     // MARK: Layout
