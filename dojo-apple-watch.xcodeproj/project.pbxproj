@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F0166B7F1A1CF08500B4A9A2 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0166B7E1A1CF08500B4A9A2 /* WatchKit.framework */; };
 		F0166B851A1CF08500B4A9A2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0166B841A1CF08500B4A9A2 /* InterfaceController.swift */; };
-		F0166B871A1CF08500B4A9A2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0166B861A1CF08500B4A9A2 /* NotificationController.swift */; };
 		F0166B891A1CF08500B4A9A2 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0166B881A1CF08500B4A9A2 /* GlanceController.swift */; };
 		F0166B8B1A1CF08500B4A9A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0166B8A1A1CF08500B4A9A2 /* Images.xcassets */; };
 		F0166B8F1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */; };
@@ -17,18 +16,15 @@
 		F0166B981A1CF08500B4A9A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0166B971A1CF08500B4A9A2 /* Images.xcassets */; };
 		F0166B9B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0166BA61A1CF16200B4A9A2 /* LaunchScreen_dev.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0166BA51A1CF16200B4A9A2 /* LaunchScreen_dev.xib */; };
-		F09852021A1D3CEA007E2D44 /* InterfaceHitsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09852011A1D3CEA007E2D44 /* InterfaceHitsController.swift */; };
 		F0C5FCFB1A992594001E4E7D /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C5FCFA1A992594001E4E7D /* Spotify.framework */; };
 		F0C5FCFF1A992777001E4E7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C5FCFD1A992761001E4E7D /* AVFoundation.framework */; };
 		F0F264E51A1D2757007A2066 /* XMCShared.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F264E41A1D2757007A2066 /* XMCShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0F264F71A1D2757007A2066 /* XMCShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; };
 		F0F264F81A1D2757007A2066 /* XMCShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F0F265001A1D27A4007A2066 /* XMCEquities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */; };
-		F0F265011A1D2988007A2066 /* XMCEquities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */; };
 		F0F265031A1D2B25007A2066 /* XMCShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; };
-		F0F265041A1D2CDF007A2066 /* XMCEquities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */; };
+		F0FE7A251A996A3E0013F081 /* XMCSpotifyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE7A241A996A3E0013F081 /* XMCSpotifyPlayer.swift */; };
 		F0FFD1991A1CDAA700738E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD1981A1CDAA700738E63 /* AppDelegate.swift */; };
-		F0FFD19B1A1CDAA700738E63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD19A1A1CDAA700738E63 /* ViewController.swift */; };
+		F0FFD19B1A1CDAA700738E63 /* XMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD19A1A1CDAA700738E63 /* XMCViewController.swift */; };
 		F0FFD19E1A1CDAA700738E63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FFD19C1A1CDAA700738E63 /* Main.storyboard */; };
 		F0FFD1A01A1CDAA700738E63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FFD19F1A1CDAA700738E63 /* Images.xcassets */; };
 /* End PBXBuildFile section */
@@ -87,7 +83,6 @@
 		F0166B7E1A1CF08500B4A9A2 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		F0166B821A1CF08500B4A9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0166B841A1CF08500B4A9A2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		F0166B861A1CF08500B4A9A2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		F0166B881A1CF08500B4A9A2 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		F0166B8A1A1CF08500B4A9A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dojo-apple-watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,18 +91,17 @@
 		F0166B971A1CF08500B4A9A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0166BA51A1CF16200B4A9A2 /* LaunchScreen_dev.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen_dev.xib; sourceTree = "<group>"; };
 		F01774331A1D447C006912F2 /* PushNotificationPayload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PushNotificationPayload.json; sourceTree = "<group>"; };
-		F09852011A1D3CEA007E2D44 /* InterfaceHitsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceHitsController.swift; sourceTree = "<group>"; };
 		F0C5FCFA1A992594001E4E7D /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = Frameworks/Spotify.framework; sourceTree = "<group>"; };
 		F0C5FCFD1A992761001E4E7D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F0C5FD021A992876001E4E7D /* dojo-apple-watch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dojo-apple-watch-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F0F264E01A1D2757007A2066 /* XMCShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMCShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F264E31A1D2757007A2066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F264E41A1D2757007A2066 /* XMCShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMCShared.h; sourceTree = "<group>"; };
-		F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCEquities.swift; sourceTree = "<group>"; };
+		F0FE7A241A996A3E0013F081 /* XMCSpotifyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCSpotifyPlayer.swift; sourceTree = "<group>"; };
 		F0FFD1931A1CDAA700738E63 /* dojo-apple-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dojo-apple-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FFD1971A1CDAA700738E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0FFD1981A1CDAA700738E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0FFD19A1A1CDAA700738E63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0FFD19A1A1CDAA700738E63 /* XMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMCViewController.swift; sourceTree = "<group>"; };
 		F0FFD19D1A1CDAA700738E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0FFD19F1A1CDAA700738E63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,8 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				F0166B841A1CF08500B4A9A2 /* InterfaceController.swift */,
-				F09852011A1D3CEA007E2D44 /* InterfaceHitsController.swift */,
-				F0166B861A1CF08500B4A9A2 /* NotificationController.swift */,
 				F0166B881A1CF08500B4A9A2 /* GlanceController.swift */,
 				F0166B8A1A1CF08500B4A9A2 /* Images.xcassets */,
 				F0166B811A1CF08500B4A9A2 /* Supporting Files */,
@@ -198,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				F0F264E41A1D2757007A2066 /* XMCShared.h */,
-				F0F264FF1A1D27A4007A2066 /* XMCEquities.swift */,
 				F0F264E21A1D2757007A2066 /* Supporting Files */,
 			);
 			path = shared;
@@ -238,8 +229,9 @@
 		F0FFD1951A1CDAA700738E63 /* iOS App */ = {
 			isa = PBXGroup;
 			children = (
+				F0FE7A241A996A3E0013F081 /* XMCSpotifyPlayer.swift */,
+				F0FFD19A1A1CDAA700738E63 /* XMCViewController.swift */,
 				F0FFD1981A1CDAA700738E63 /* AppDelegate.swift */,
-				F0FFD19A1A1CDAA700738E63 /* ViewController.swift */,
 				F0FFD19C1A1CDAA700738E63 /* Main.storyboard */,
 				F0166BA51A1CF16200B4A9A2 /* LaunchScreen_dev.xib */,
 				F0FFD19F1A1CDAA700738E63 /* Images.xcassets */,
@@ -431,9 +423,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0166B871A1CF08500B4A9A2 /* NotificationController.swift in Sources */,
-				F0F265041A1D2CDF007A2066 /* XMCEquities.swift in Sources */,
-				F09852021A1D3CEA007E2D44 /* InterfaceHitsController.swift in Sources */,
 				F0166B851A1CF08500B4A9A2 /* InterfaceController.swift in Sources */,
 				F0166B891A1CF08500B4A9A2 /* GlanceController.swift in Sources */,
 			);
@@ -443,7 +432,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0F265001A1D27A4007A2066 /* XMCEquities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,8 +439,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0F265011A1D2988007A2066 /* XMCEquities.swift in Sources */,
-				F0FFD19B1A1CDAA700738E63 /* ViewController.swift in Sources */,
+				F0FE7A251A996A3E0013F081 /* XMCSpotifyPlayer.swift in Sources */,
+				F0FFD19B1A1CDAA700738E63 /* XMCViewController.swift in Sources */,
 				F0FFD1991A1CDAA700738E63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

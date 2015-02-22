@@ -24,7 +24,7 @@
         <!--View Controller-->
         <scene sceneID="Tba-Dq-bHd">
             <objects>
-                <viewController id="e8F-Hv-6nZ" customClass="ViewController" customModule="dojo_apple_watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e8F-Hv-6nZ" customClass="XMCViewController" customModule="dojo_apple_watch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IGW-s3-765"/>
                         <viewControllerLayoutGuide type="bottom" id="WOf-lR-GOr"/>

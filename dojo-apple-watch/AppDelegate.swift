@@ -22,6 +22,9 @@ let kSessionObjectDefaultsKey = "kSessionObjectDefaultsKey"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var session: SPTSession?
+    var player: SPTAudioStreamingController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         return true
@@ -37,7 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
                     NSUserDefaults.standardUserDefaults().setObject(sessionData, forKey: kSessionObjectDefaultsKey)
                     NSUserDefaults.standardUserDefaults().synchronize()
+                    
+                    // Update our shared player
+                    XMCSpotifyPlayer.sharedPlayer.session = session
         
+                    // Notifiy our main interface
                     NSNotificationCenter.defaultCenter().postNotificationName(kSessionWasUpdated, object: session)
                 }
             })
@@ -80,6 +87,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         NSLog("Process Remote Notification Action")
         completionHandler()
+    }
+    
+    // MARK: - Extension Request
+    func application(application: UIApplication!, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        let trigger = userInfo["trigger"] as String
+        if trigger == "auth" {
+            let value = XMCSpotifyPlayer.sharedPlayer.isAuthenticated()
+            if value == false {
+                reply(["value": "false"])
+            } else {
+                reply(["value": "true"])
+            }
+        }
+        else if trigger == "login" {
+            XMCSpotifyPlayer.sharedPlayer.loginSession(playbackDelegate: nil, delegate: nil, completed: { (success) in
+                reply(["value": (success) ? "true" : "false"])
+            })
+        }
+        else if trigger == "queue" {
+            XMCSpotifyPlayer.sharedPlayer.queueDefaultAlbum({ (success) -> Void in
+                reply(["value": (success) ? "true" : "false"])
+            })
+        }
+        else if trigger == "play" {
+            // pass control so we can fetch track metadata
+            XMCSpotifyPlayer.sharedPlayer.playPlayerQueue()
+            reply(nil)
+        }
+        else if trigger == "stop" {
+            XMCSpotifyPlayer.sharedPlayer.stopPlayer()
+            reply(nil)
+        }
+        else if trigger == "previous" {
+            XMCSpotifyPlayer.sharedPlayer.skipPrevious()
+            reply(nil)
+        }
+        else if trigger == "next" {
+            XMCSpotifyPlayer.sharedPlayer.skipNext()
+            reply(nil)
+        }
+        else if trigger == "image" {
+            if XMCSpotifyPlayer.sharedPlayer.isPlaying() {
+                XMCSpotifyPlayer.sharedPlayer.getAlbumArtAsDataForCurrentTrack({ (data) in
+                    if let dict = data {
+                        reply(["imageData": data!])
+                    } else {
+                        reply(nil)
+                    }
+                })
+            } else {
+                reply(["error": "not playing"])
+            }
+        }
+        else if trigger == "metadata" {
+            if XMCSpotifyPlayer.sharedPlayer.isPlaying() {
+                let metadata = XMCSpotifyPlayer.sharedPlayer.player?.currentTrackMetadata as? [String: AnyObject]
+                let duration = metadata?[SPTAudioStreamingMetadataTrackDuration] as NSTimeInterval
+                let trackTitle = metadata?[SPTAudioStreamingMetadataTrackName] as String
+                reply(["title": trackTitle, "duration": duration])
+            } else {
+                reply(["error": "not playing"])
+            }
+        }
+        else {
+            println("Unhandled trigger!")
+            reply(nil)
+        }
     }
 }
 
