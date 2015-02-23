@@ -76,13 +76,40 @@ class XMCSpotifyPlayer: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStr
     // MARK: - Player Controls
     
     func queueDefaultAlbum(completed: (success: Bool) -> Void) {
-        SPTRequest.requestItemAtURI(NSURL(string: "spotify:album:1ZuyuaB3hzsew72bxgCv5E"), withSession: session, callback: { (error, album) in
+        if kPlayerPlaySampleTrack {
+            queueSpotifyFreeSample(completed)
+        }
+        else {
+            SPTRequest.requestItemAtURI(NSURL(string: "spotify:album:1ZuyuaB3hzsew72bxgCv5E"), withSession: session, callback: { (error, album) in
+                if error != nil {
+                    completed(success: false)
+                } else {
+                    self.player?.queueTrackProvider(album as SPTAlbum, clearQueue: true, callback: { (error) in
+                        if error != nil {
+                            println("Couldn't queue tracks: \(error.localizedDescription)")
+                            completed(success: false)
+                        } else {
+                            completed(success: true)
+                        }
+                        
+                        // Don't start immediately
+                        self.stopPlayer()
+                    })
+                }
+            })
+        }
+    }
+    
+    //spotify:track:73DF2bQTw1tNzfMAttSKVG
+    
+    func queueSpotifyFreeSample(completed: (success: Bool) -> Void) {
+        SPTRequest.requestItemAtURI(NSURL(string: "spotify:track:73DF2bQTw1tNzfMAttSKVG"), withSession: session) { (error, track) -> Void in
             if error != nil {
                 completed(success: false)
             } else {
-                self.player?.queueTrackProvider(album as SPTAlbum, clearQueue: true, callback: { (error) in
+                self.player?.queueTrackProvider(track as SPTTrack, clearQueue: true, callback: { (error) in
                     if error != nil {
-                        println("Couldn't queue tracks: \(error.localizedDescription)")
+                        println("Couldn't queue track: \(error.localizedDescription)")
                         completed(success: false)
                     } else {
                         completed(success: true)
@@ -92,7 +119,7 @@ class XMCSpotifyPlayer: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStr
                     self.stopPlayer()
                 })
             }
-        })
+        }
     }
     
     func togglePlay() {

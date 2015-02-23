@@ -18,6 +18,8 @@ let kSessionLoginDidSucceed = "kSessionLoginDidSucceed"
 let kSessionLoginDidFail = "kSessionLoginDidFail"
 let kSessionObjectDefaultsKey = "kSessionObjectDefaultsKey"
 
+let kPlayerPlaySampleTrack = true
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
