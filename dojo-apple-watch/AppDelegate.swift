@@ -18,7 +18,7 @@ let kSessionLoginDidSucceed = "kSessionLoginDidSucceed"
 let kSessionLoginDidFail = "kSessionLoginDidFail"
 let kSessionObjectDefaultsKey = "kSessionObjectDefaultsKey"
 
-let kPlayerPlaySampleTrack = true
+let kPlayerPlaySampleTrack = false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -131,7 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else if trigger == "image" {
             if XMCSpotifyPlayer.sharedPlayer.isPlaying() {
-                XMCSpotifyPlayer.sharedPlayer.getAlbumArtAsDataForCurrentTrack({ (data) in
+                XMCSpotifyPlayer.sharedPlayer.getAlbumArtAsDataForCurrentTrack(false, completed: { (data) in
                     if let dict = data {
                         reply(["imageData": data!])
                     } else {

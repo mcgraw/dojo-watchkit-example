@@ -173,8 +173,8 @@ class XMCSpotifyPlayer: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStr
     
     // MARK - Metadata
     
-    func getAlbumArtForCurrentTrack(completed: (image: UIImage?) -> Void) {
-        getAlbumArtDataContent { (data) -> Void in
+    func getAlbumArtForCurrentTrack(largestCover: Bool, completed: (image: UIImage?) -> Void) {
+        getAlbumArtDataContent(largestCover, completed: { (data) in
             dispatch_async(dispatch_get_main_queue()) {
                 if data != nil {
                     completed(image: UIImage(data: data!))
@@ -182,18 +182,18 @@ class XMCSpotifyPlayer: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStr
                     completed(image: nil)
                 }
             }
-        }
+        })
     }
     
-    func getAlbumArtAsDataForCurrentTrack(completed: (data: NSData?) -> Void) {
-        getAlbumArtDataContent { (data) -> Void in
+    func getAlbumArtAsDataForCurrentTrack(largestCover: Bool, completed: (data: NSData?) -> Void) {
+        getAlbumArtDataContent(largestCover, completed: { (data) in
             dispatch_async(dispatch_get_main_queue()) {
                 completed(data: data)
             }
-        }
+        })
     }
     
-    private func getAlbumArtDataContent(completed: (data: NSData?) -> Void) {
+    private func getAlbumArtDataContent(largestCover: Bool, completed: (data: NSData?) -> Void) {
         if player?.currentTrackMetadata == nil {
             completed(data: nil)
         } else {
@@ -204,11 +204,17 @@ class XMCSpotifyPlayer: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStr
                     completed(data: nil)
                 } else {
                     let album = obj as SPTAlbum
-                    if let imagePath = album.largestCover.imageURL {
-                        
+                    var imagePath: NSURL?
+                    if largestCover {
+                        imagePath = album.largestCover.imageURL
+                    } else {
+                        imagePath = album.smallestCover.imageURL
+                    }
+                    
+                    if let path = imagePath {
                         // Jump into the background to get the image
                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                            if let data = NSData(contentsOfURL: imagePath) {
+                            if let data = NSData(contentsOfURL: path) {
                                 completed(data: data)
                             }
                         }

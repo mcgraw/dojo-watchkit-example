@@ -90,13 +90,13 @@ class XMCViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioSt
     // MARK: - Private Realm
     
     private func refreshAlbumArt() {
-        XMCSpotifyPlayer.sharedPlayer.getAlbumArtForCurrentTrack { (image) in
+        XMCSpotifyPlayer.sharedPlayer.getAlbumArtForCurrentTrack(true, completed: { (image) in
             self.albumArt.image = image
             
             UIView.animateWithDuration(0.225, animations: {
                 self.albumArt.alpha = 1.0
             })
-        }
+        })
     }
     
     // MARK: - Streaming Delegate
