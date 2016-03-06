@@ -1,10 +1,5 @@
-//
-//  SPTCoreAudioController.h
-//  Viva
-//
-//  Created by Daniel Kennett on 04/02/2012.
 /*
- Copyright 2013 Spotify AB
+ Copyright 2015 Spotify AB
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.

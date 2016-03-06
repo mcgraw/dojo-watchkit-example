@@ -1,10 +1,5 @@
-//
-//  SPTAlbumCover.h
-//  Spotify iOS SDK
-//
-//  Created by Daniel Kennett on 2014-04-04.
 /*
- Copyright 2014 Spotify AB
+ Copyright 2015 Spotify AB
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -23,8 +18,14 @@
 #import <CoreGraphics/CoreGraphics.h>
 
 /** This class represents an image from the Spotify service. It could be an
- album's cover art or a user image, for example. */
+ album's cover art or a user image, for example. 
+
+ API Model: https://developer.spotify.com/web-api/object-model/#image-object
+ */
 @interface SPTImage : NSObject
+
+
+
 
 ///----------------------------
 /// @name Properties
@@ -32,7 +33,7 @@
 
 /** The image's size as reported from the backed.
  
-@warning This property may be `CGSizeZero` if the size of the image is unknown
+ @warning This property may be `CGSizeZero` if the size of the image is unknown
  by the backend. This is particularly the case with images not owned by Spotify, for
  example if a user's image is taken from their Facebook account.
  */
@@ -40,5 +41,17 @@
 
 /** The HTTP URL to the image. */
 @property (nonatomic, readonly, copy) NSURL *imageURL;
+
+
+
+
+
+
+///-------------------------------
+/// @name Response parsing methods
+///-------------------------------
+
++ (instancetype)imageFromDecodedJSON:(id)decodedObject
+							   error:(NSError **)error;
 
 @end

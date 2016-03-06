@@ -1,10 +1,5 @@
-//
-//  SPTUser.h
-//  Spotify iOS SDK
-//
-//  Created by Daniel Kennett on 2014-06-09.
 /*
- Copyright 2013 Spotify AB
+ Copyright 2015 Spotify AB
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -37,8 +32,17 @@ typedef NS_ENUM(NSUInteger, SPTProduct) {
 	SPTProductUnknown
 };
 
-/** This class represents a user on the Spotify service. */
+/** This class represents a user on the Spotify service.
+ 
+ API Model: https://developer.spotify.com/web-api/object-model/#user-object-private
+ 
+ API Console: https://developer.spotify.com/web-api/console/user%20profiles/
+ */
 @interface SPTUser : SPTJSONObjectBase
+
+
+
+
 
 ///----------------------------
 /// @name Properties
@@ -102,5 +106,78 @@ typedef NS_ENUM(NSUInteger, SPTProduct) {
 
 /** The number of followers this user has. */
 @property (nonatomic, readonly) long followerCount;
+
+
+
+
+
+
+///-------------------------------
+/// @name Request creation methods
+///-------------------------------
+
+/**
+ Create a NSURLRequest for requesting the current user
+
+ See: https://developer.spotify.com/web-api/console/get-current-user/
+ 
+ @param accessToken A valid and authenticated access token.
+ @param error An optional pointer to an `NSError` that will receive the error code if operation failed.
+ */
++ (NSURLRequest *)createRequestForCurrentUserWithAccessToken:(NSString *)accessToken error:(NSError **)error;
+
+/**
+ Request current user
+ 
+ See: https://developer.spotify.com/web-api/console/get-current-user/
+ 
+ @param accessToken A valid and authenticated access token.
+ @param block The block to be called when the operation is complete. The block will pass a Spotify SDK metadata object on success, otherwise an error.
+ */
++(void)requestCurrentUserWithAccessToken:(NSString *)accessToken callback:(SPTRequestCallback)block;
+
+/**
+ Request a user profile
+ 
+ See: https://developer.spotify.com/web-api/console/get-users-profile/
+ 
+ @param username The username of the user to request
+ @param accessToken A valid and authenticated access token, or `nil`
+ @param block The block to be called when the operation is complete. The block will pass a Spotify SDK metadata object on success, otherwise an error.
+ */
++(void)requestUser:(NSString *)username withAccessToken:(NSString *)accessToken callback:(SPTRequestCallback)block;
+
+
+
+
+
+///-------------------------------
+/// @name Response parsing methods
+///-------------------------------
+
+/**
+ Convert a HTTP response into a SPTUser object
+ 
+ See: https://developer.spotify.com/web-api/object-model/#user-object-private and https://developer.spotify.com/web-api/object-model/#user-object-public
+ 
+ @param data The response body
+ @param response The response headers
+ @param error An optional pointer to an `NSError` that will receive the error code if operation failed.
+ */
++ (instancetype)userFromData:(NSData *)data
+				withResponse:(NSURLResponse *)response
+					   error:(NSError **)error;
+
+
+/**
+ Convert a decoded response into a SPTUser object
+ 
+ See: https://developer.spotify.com/web-api/object-model/#user-object-private and https://developer.spotify.com/web-api/object-model/#user-object-public
+ 
+ @param decodedObject The decoded JSON object structure.
+ @param error An optional pointer to an `NSError` that will receive the error code if operation failed.
+ */
++ (instancetype)userFromDecodedJSON:(id)decodedObject
+							  error:(NSError **)error;
 
 @end

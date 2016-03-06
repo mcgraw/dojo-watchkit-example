@@ -1,17 +1,12 @@
-//
-//  SPTPartialPlaylist.h
-//  Basic Auth
-//
-//  Created by Daniel Kennett on 19/11/2013.
 /*
- Copyright 2013 Spotify AB
-
+ Copyright 2015 Spotify AB
+ 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
-
+ 
  http://www.apache.org/licenses/LICENSE-2.0
-
+ 
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,8 +23,17 @@
 @class SPTUser;
 
 /** Represents a "partial" playlist on the Spotify service. You can promote this
- to a full playlist object using `SPTRequest`. */
+ to a full playlist object using `SPTPlaylistSnapshot`.
+
+ API Model: https://developer.spotify.com/web-api/object-model/#playlist-object-simplified
+ 
+ Playlist Guide: https://developer.spotify.com/web-api/working-with-playlists/
+ */
 @interface SPTPartialPlaylist : SPTJSONObjectBase<SPTPartialObject, SPTTrackProvider>
+
+
+
+
 
 ///----------------------------
 /// @name Properties
@@ -73,5 +77,15 @@
  Will be `nil` if the playlist doesn't have a custom image.
  */
 @property (nonatomic, readonly) SPTImage *largestImage;
+
+
+
+
+///------------------------------
+/// @name Parsers / Deserializers
+///------------------------------
+
++ (instancetype)partialPlaylistFromDecodedJSON:(id)decodedObject
+										 error:(NSError **)error;
 
 @end

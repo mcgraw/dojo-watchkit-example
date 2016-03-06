@@ -18,7 +18,7 @@ let kSessionLoginDidSucceed = "kSessionLoginDidSucceed"
 let kSessionLoginDidFail = "kSessionLoginDidFail"
 let kSessionObjectDefaultsKey = "kSessionObjectDefaultsKey"
 
-let kPlayerPlaySampleTrack = false
+let kPlayerPlaySampleTrack = true
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,11 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        if SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: NSURL(string: kCallbackURL)) {
-            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, tokenSwapServiceEndpointAtURL: NSURL(string: kTokenSwapUrl), callback: { (error, session) in
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        if SPTAuth.defaultInstance().canHandleURL(url) {
+            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error, session) -> Void in
                 if error != nil {
-                    println("Authorization Error: \(error.localizedDescription)")
+                    print("Authorization Error: \(error.localizedDescription)")
                 } else {
                     // Store our session away for future usage
                     let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     // Update our shared player
                     XMCSpotifyPlayer.sharedPlayer.session = session
-        
+                    
                     // Notifiy our main interface
                     NSNotificationCenter.defaultCenter().postNotificationName(kSessionWasUpdated, object: session)
                 }
@@ -92,69 +92,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Extension Request
-    func application(application: UIApplication!, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]!, reply: (([NSObject : AnyObject]!) -> Void)!) {
-        let trigger = userInfo["trigger"] as String
-        if trigger == "auth" {
-            let value = XMCSpotifyPlayer.sharedPlayer.isAuthenticated()
-            if value == false {
-                reply(["value": "false"])
-            } else {
-                reply(["value": "true"])
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]?) -> Void)) {
+        if let trigger = userInfo?["trigger"] as? String {
+            if trigger == "auth" {
+                let value = XMCSpotifyPlayer.sharedPlayer.isAuthenticated()
+                if value == false {
+                    reply(["value": "false"])
+                } else {
+                    reply(["value": "true"])
+                }
             }
-        }
-        else if trigger == "login" {
-            XMCSpotifyPlayer.sharedPlayer.loginSession(playbackDelegate: nil, delegate: nil, completed: { (success) in
-                reply(["value": (success) ? "true" : "false"])
-            })
-        }
-        else if trigger == "queue" {
-            XMCSpotifyPlayer.sharedPlayer.queueDefaultAlbum({ (success) -> Void in
-                reply(["value": (success) ? "true" : "false"])
-            })
-        }
-        else if trigger == "play" {
-            // pass control so we can fetch track metadata
-            XMCSpotifyPlayer.sharedPlayer.playPlayerQueue()
-            reply(nil)
-        }
-        else if trigger == "stop" {
-            XMCSpotifyPlayer.sharedPlayer.stopPlayer()
-            reply(nil)
-        }
-        else if trigger == "previous" {
-            XMCSpotifyPlayer.sharedPlayer.skipPrevious()
-            reply(nil)
-        }
-        else if trigger == "next" {
-            XMCSpotifyPlayer.sharedPlayer.skipNext()
-            reply(nil)
-        }
-        else if trigger == "image" {
-            if XMCSpotifyPlayer.sharedPlayer.isPlaying() {
-                XMCSpotifyPlayer.sharedPlayer.getAlbumArtAsDataForCurrentTrack(false, completed: { (data) in
-                    if let dict = data {
-                        reply(["imageData": data!])
-                    } else {
-                        reply(nil)
-                    }
+            else if trigger == "login" {
+                XMCSpotifyPlayer.sharedPlayer.loginSession(playbackDelegate: nil, delegate: nil, completed: { (success) in
+                    reply(["value": (success) ? "true" : "false"])
                 })
-            } else {
-                reply(["error": "not playing"])
             }
-        }
-        else if trigger == "metadata" {
-            if XMCSpotifyPlayer.sharedPlayer.isPlaying() {
-                let metadata = XMCSpotifyPlayer.sharedPlayer.player?.currentTrackMetadata as? [String: AnyObject]
-                let duration = metadata?[SPTAudioStreamingMetadataTrackDuration] as NSTimeInterval
-                let trackTitle = metadata?[SPTAudioStreamingMetadataTrackName] as String
-                reply(["title": trackTitle, "duration": duration])
-            } else {
-                reply(["error": "not playing"])
+            else if trigger == "queue" {
+                XMCSpotifyPlayer.sharedPlayer.queueDefaultAlbum({ (success) -> Void in
+                    reply(["value": (success) ? "true" : "false"])
+                })
             }
-        }
-        else {
-            println("Unhandled trigger!")
-            reply(nil)
+            else if trigger == "play" {
+                // pass control so we can fetch track metadata
+                XMCSpotifyPlayer.sharedPlayer.playPlayerQueue()
+                reply(nil)
+            }
+            else if trigger == "stop" {
+                XMCSpotifyPlayer.sharedPlayer.stopPlayer()
+                reply(nil)
+            }
+            else if trigger == "previous" {
+                XMCSpotifyPlayer.sharedPlayer.skipPrevious()
+                reply(nil)
+            }
+            else if trigger == "next" {
+                XMCSpotifyPlayer.sharedPlayer.skipNext()
+                reply(nil)
+            }
+            else if trigger == "image" {
+                if XMCSpotifyPlayer.sharedPlayer.isPlaying() {
+                    XMCSpotifyPlayer.sharedPlayer.getAlbumArtAsDataForCurrentTrack(false, completed: { (data) in
+                        if let dict = data {
+                            reply(["imageData": dict])
+                        } else {
+                            reply(nil)
+                        }
+                    })
+                } else {
+                    reply(["error": "not playing"])
+                }
+            }
+            else if trigger == "metadata" {
+                if XMCSpotifyPlayer.sharedPlayer.isPlaying() {
+                    let metadata = XMCSpotifyPlayer.sharedPlayer.player?.currentTrackMetadata as? [String: AnyObject]
+                    let duration = metadata?[SPTAudioStreamingMetadataTrackDuration] as! NSTimeInterval
+                    let trackTitle = metadata?[SPTAudioStreamingMetadataTrackName] as! String
+                    reply(["title": trackTitle, "duration": duration])
+                } else {
+                    reply(["error": "not playing"])
+                }
+            }
+            else {
+                print("Unhandled trigger!")
+                reply(nil)
+            }
         }
     }
 }

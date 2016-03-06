@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import WatchConnectivity
 import Foundation
 
 enum PlayState {
@@ -33,8 +34,8 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         // Are we authenticated?
-        println("Check Authentication")
-        WKInterfaceController.openParentApplication(["trigger" :"auth"], reply: { (replyInfo, error) in
+        print("Check Authentication")
+        WCSession.defaultSession().sendMessage(["trigger" :"auth"], replyHandler: { (replyInfo) in
             if let value = replyInfo["value"] as? String {
                 if value == "true" {
                     self.performLogin()
@@ -43,104 +44,93 @@ class InterfaceController: WKInterfaceController {
                     self.playerGroup.setHidden(true)
                 }
             }
-        })
+        }) { (error) in
+            print("Error: \(error)")
+        }
     }
     
     func performLogin() {
-        println("Perform Login")
-        WKInterfaceController.openParentApplication(["trigger": "login"], reply: { (replyInfo, error) in
-            if error != nil {
-                println("Error: \(error.localizedDescription)")
-            } else {
-                let value = replyInfo["value"] as String
-                if value == "true" {
-                    self.performAlbumQueue()
-                }
+        print("Perform Login")
+        WCSession.defaultSession().sendMessage(["trigger": "login"], replyHandler: { (replyInfo) -> Void in
+            if let value = replyInfo["value"] as? String where value == "true" {
+                self.performAlbumQueue()
             }
-        })
+        }) { (error) in
+            print("Error: \(error)")
+        }
     }
     
     func performAlbumQueue() {
-        println("Add album to queue")
-        WKInterfaceController.openParentApplication(["trigger": "queue"], reply: { (replyInfo, error) in
-            if error != nil {
-                println("Error: \(error.localizedDescription)")
-            } else {
-                if let value = replyInfo["value"] as? String {
-                    if value == "false" {
-                        self.playToggle.setEnabled(false)
-                        self.authGroup.setHidden(false)
-                        self.playerGroup.setHidden(true)
-                    } else {
-                        println("Did login")
-                        self.playToggle.setEnabled(true)
-                    }
+        print("Add album to queue")
+        WCSession.defaultSession().sendMessage(["trigger": "queue"], replyHandler: { (replyInfo) -> Void in
+            if let value = replyInfo["value"] as? String {
+                if value == "false" {
+                    self.playToggle.setEnabled(false)
+                    self.authGroup.setHidden(false)
+                    self.playerGroup.setHidden(true)
+                } else {
+                    print("Did login")
+                    self.playToggle.setEnabled(true)
                 }
             }
-        })
+        }) { (error) in
+            print("Error: \(error)")
+        }
     }
     
     func getMetadata() {
-        println("Fetch Metadata")
-        WKInterfaceController.openParentApplication(["trigger": "metadata"], reply: { (replyInfo, error) in
-            if error != nil {
-                println("Error: \(error.localizedDescription)")
+        print("Fetch Metadata")
+        WCSession.defaultSession().sendMessage(["trigger": "metadata"], replyHandler: { (replyInfo) -> Void in
+            if let _ = replyInfo["error"] as? String {
+                self.playerDidError()
             } else {
-                if let infoError = replyInfo["error"] as? String {
-                    self.playerDidError()
-                } else {
-                    let trackTitle = replyInfo["title"] as String
-                    let duration = replyInfo["duration"] as Double
-                    
-                    self.trackName.setText(trackTitle)
-                    self.trackTime.setDate(NSDate(timeIntervalSinceNow: duration))
-                    self.trackTime.start()
-                    self.trackTime.setHidden(false)
-                    self.trackName.setHidden(false)
-                    self.welcomeTitle.setHidden(true)
-                }
+                let trackTitle = replyInfo["title"] as! String
+                let duration = replyInfo["duration"] as! Double
+                
+                self.trackName.setText(trackTitle)
+                self.trackTime.setDate(NSDate(timeIntervalSinceNow: duration))
+                self.trackTime.start()
+                self.trackTime.setHidden(false)
+                self.trackName.setHidden(false)
+                self.welcomeTitle.setHidden(true)
             }
-        })
+        }) { (error) in
+            print("Error: \(error)")
+        }
     }
     
     func getImage() {
-        println("Fetch Album Image")
-        WKInterfaceController.openParentApplication(["trigger": "image"], reply: { (replyInfo, error) in
-            if error != nil {
-                println("Error: \(error.localizedDescription)")
+        print("Fetch Album Image")
+        WCSession.defaultSession().sendMessage(["trigger": "image"], replyHandler: { (replyInfo) -> Void in
+            if let _ = replyInfo["error"] as? String {
+                self.playerDidError()
             } else {
-                if let infoError = replyInfo["error"] as? String {
-                    self.playerDidError()
-                } else {
-                    if let data = replyInfo["imageData"] as? NSData {
-                        self.playerGroup.setBackgroundImageData(data)
-                    }
+                if let data = replyInfo["imageData"] as? NSData {
+                    self.playerGroup.setBackgroundImageData(data)
                 }
             }
-        })
+        }) { (error) in
+            print("Error: \(error)")
+        }
     }
     
     // MARK: - Actions
     
     @IBAction func previousActionPressed() {
-        WKInterfaceController.openParentApplication(["trigger": "previous"], reply: { (replyInfo, error) in
-            if error != nil {
-                println("Error: \(error.localizedDescription)")
-            } else {
-                // track should have moved
-                NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refreshMetadata", userInfo: nil, repeats: false)
-            }
-        })
+        WCSession.defaultSession().sendMessage(["trigger": "previous"], replyHandler: { (replyInfo) -> Void in
+            // track should have moved
+            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refreshMetadata", userInfo: nil, repeats: false)
+        }) { (error) in
+            print("Error: \(error)")
+        }
     }
     
     @IBAction func nextActionPressed() {
-        WKInterfaceController.openParentApplication(["trigger": "next"], reply: { (replyInfo, error) in
-            if error != nil {
-                println("Error: \(error.localizedDescription)")
-            } else {
-                NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refreshMetadata", userInfo: nil, repeats: false)
-            }
-        })
+        WCSession.defaultSession().sendMessage(["trigger": "next"], replyHandler: { (replyInfo) -> Void in
+            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refreshMetadata", userInfo: nil, repeats: false)
+        }) { (error) in
+                print("Error: \(error)")
+        }
     }
     
     @IBAction func playActionPressed() {
@@ -150,26 +140,22 @@ class InterfaceController: WKInterfaceController {
             self.nextTrack.setEnabled(true)
             playToggle.setBackgroundImageNamed("watch-pause")
             
-            WKInterfaceController.openParentApplication(["trigger": "play"], reply: { (replyInfo, error) in
-                if error != nil {
-                    println("Error: \(error.localizedDescription)")
-                } else {
-                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refreshMetadata", userInfo: nil, repeats: false)
-                }
-            })
+            WCSession.defaultSession().sendMessage(["trigger": "play"], replyHandler: { (replyInfo) -> Void in
+                NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refreshMetadata", userInfo: nil, repeats: false)
+            }) { (error) in
+                print("Error: \(error)")
+            }
         } else {
             state = .Paused
             self.prevTrack.setEnabled(false)
             self.nextTrack.setEnabled(false)
             playToggle.setBackgroundImageNamed("watch-play")
             
-            WKInterfaceController.openParentApplication(["trigger": "stop"], reply: { (replyInfo, error) in
-                if error != nil {
-                    println("Error: \(error.localizedDescription)")
-                } else {
-                    self.trackTime.stop()
-                }
-            })
+            WCSession.defaultSession().sendMessage(["trigger": "stop"], replyHandler: { (replyInfo) -> Void in
+                self.trackTime.stop()
+            }) { (error) in
+                print("Error: \(error)")
+            }
         }
     }
     

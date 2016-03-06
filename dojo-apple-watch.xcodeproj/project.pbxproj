@@ -11,17 +11,13 @@
 		F0166B851A1CF08500B4A9A2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0166B841A1CF08500B4A9A2 /* InterfaceController.swift */; };
 		F0166B891A1CF08500B4A9A2 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0166B881A1CF08500B4A9A2 /* GlanceController.swift */; };
 		F0166B8B1A1CF08500B4A9A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0166B8A1A1CF08500B4A9A2 /* Images.xcassets */; };
-		F0166B8F1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */; };
 		F0166B961A1CF08500B4A9A2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0166B951A1CF08500B4A9A2 /* Interface.storyboard */; };
 		F0166B981A1CF08500B4A9A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0166B971A1CF08500B4A9A2 /* Images.xcassets */; };
-		F0166B9B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0166BA61A1CF16200B4A9A2 /* LaunchScreen_dev.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0166BA51A1CF16200B4A9A2 /* LaunchScreen_dev.xib */; };
 		F0C5FCFB1A992594001E4E7D /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C5FCFA1A992594001E4E7D /* Spotify.framework */; };
 		F0C5FCFF1A992777001E4E7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C5FCFD1A992761001E4E7D /* AVFoundation.framework */; };
-		F0F264E51A1D2757007A2066 /* XMCShared.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F264E41A1D2757007A2066 /* XMCShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0F264F71A1D2757007A2066 /* XMCShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; };
-		F0F264F81A1D2757007A2066 /* XMCShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F0F265031A1D2B25007A2066 /* XMCShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F264E01A1D2757007A2066 /* XMCShared.framework */; };
+		F0D106921C8CB7050080E8B9 /* dojo-apple-watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0D106951C8CB7050080E8B9 /* dojo-apple-watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */; };
 		F0FE7A251A996A3E0013F081 /* XMCSpotifyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE7A241A996A3E0013F081 /* XMCSpotifyPlayer.swift */; };
 		F0FFD1991A1CDAA700738E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD1981A1CDAA700738E63 /* AppDelegate.swift */; };
 		F0FFD19B1A1CDAA700738E63 /* XMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD19A1A1CDAA700738E63 /* XMCViewController.swift */; };
@@ -30,48 +26,61 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F0166B901A1CF08500B4A9A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0FFD18B1A1CDAA700738E63 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0166B8D1A1CF08500B4A9A2;
-			remoteInfo = "dojo-apple-watch Watch App";
-		};
-		F0166B991A1CF08500B4A9A2 /* PBXContainerItemProxy */ = {
+		F0D106901C8CB7050080E8B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0FFD18B1A1CDAA700738E63 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F0166B7B1A1CF08500B4A9A2;
 			remoteInfo = "dojo-apple-watch WatchKit Extension";
 		};
-		F0F264F51A1D2757007A2066 /* PBXContainerItemProxy */ = {
+		F0D106931C8CB7050080E8B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0FFD18B1A1CDAA700738E63 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F0F264DF1A1D2757007A2066;
-			remoteInfo = shared;
+			remoteGlobalIDString = F0166B8D1A1CF08500B4A9A2;
+			remoteInfo = "dojo-apple-watch Watch App";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F0166BA21A1CF08500B4A9A2 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				F0166B9B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F0166BF41A1D080000B4A9A2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F0F264F81A1D2757007A2066 /* XMCShared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0D106961C8CB7050080E8B9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F0D106921C8CB7050080E8B9 /* dojo-apple-watch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0D106971C8CB7050080E8B9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F0D106951C8CB7050080E8B9 /* dojo-apple-watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0D106A91C8CBDB60080E8B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,9 +103,6 @@
 		F0C5FCFA1A992594001E4E7D /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = Frameworks/Spotify.framework; sourceTree = "<group>"; };
 		F0C5FCFD1A992761001E4E7D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F0C5FD021A992876001E4E7D /* dojo-apple-watch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dojo-apple-watch-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		F0F264E01A1D2757007A2066 /* XMCShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMCShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0F264E31A1D2757007A2066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0F264E41A1D2757007A2066 /* XMCShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMCShared.h; sourceTree = "<group>"; };
 		F0FE7A241A996A3E0013F081 /* XMCSpotifyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCSpotifyPlayer.swift; sourceTree = "<group>"; };
 		F0FFD1931A1CDAA700738E63 /* dojo-apple-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dojo-apple-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FFD1971A1CDAA700738E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,15 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0F265031A1D2B25007A2066 /* XMCShared.framework in Frameworks */,
 				F0166B7F1A1CF08500B4A9A2 /* WatchKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F0F264DC1A1D2757007A2066 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0F264F71A1D2757007A2066 /* XMCShared.framework in Frameworks */,
 				F0C5FCFF1A992777001E4E7D /* AVFoundation.framework in Frameworks */,
 				F0C5FCFB1A992594001E4E7D /* Spotify.framework in Frameworks */,
 			);
@@ -186,30 +183,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F0F264E11A1D2757007A2066 /* shared */ = {
-			isa = PBXGroup;
-			children = (
-				F0F264E41A1D2757007A2066 /* XMCShared.h */,
-				F0F264E21A1D2757007A2066 /* Supporting Files */,
-			);
-			path = shared;
-			sourceTree = "<group>";
-		};
-		F0F264E21A1D2757007A2066 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F0F264E31A1D2757007A2066 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		F0FFD18A1A1CDAA700738E63 = {
 			isa = PBXGroup;
 			children = (
 				F0FFD1951A1CDAA700738E63 /* iOS App */,
 				F0166B801A1CF08500B4A9A2 /* WatchKit Extension */,
 				F0166B921A1CF08500B4A9A2 /* Watch App */,
-				F0F264E11A1D2757007A2066 /* shared */,
 				F0166B7D1A1CF08500B4A9A2 /* Frameworks */,
 				F0FFD1941A1CDAA700738E63 /* Products */,
 			);
@@ -221,7 +200,6 @@
 				F0FFD1931A1CDAA700738E63 /* dojo-apple-watch.app */,
 				F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */,
 				F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */,
-				F0F264E01A1D2757007A2066 /* XMCShared.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,17 +230,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		F0F264DD1A1D2757007A2066 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0F264E51A1D2757007A2066 /* XMCShared.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		F0166B7B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension */ = {
 			isa = PBXNativeTarget;
@@ -271,49 +238,33 @@
 				F0166B781A1CF08500B4A9A2 /* Sources */,
 				F0166B791A1CF08500B4A9A2 /* Frameworks */,
 				F0166B7A1A1CF08500B4A9A2 /* Resources */,
+				F0D106A91C8CBDB60080E8B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F0166B911A1CF08500B4A9A2 /* PBXTargetDependency */,
 			);
 			name = "dojo-apple-watch WatchKit Extension";
 			productName = "dojo-apple-watch WatchKit Extension";
 			productReference = F0166B7C1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		F0166B8D1A1CF08500B4A9A2 /* dojo-apple-watch Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0166B9C1A1CF08500B4A9A2 /* Build configuration list for PBXNativeTarget "dojo-apple-watch Watch App" */;
 			buildPhases = (
 				F0166B8C1A1CF08500B4A9A2 /* Resources */,
+				F0D106961C8CB7050080E8B9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F0D106911C8CB7050080E8B9 /* PBXTargetDependency */,
 			);
 			name = "dojo-apple-watch Watch App";
 			productName = "dojo-apple-watch Watch App";
 			productReference = F0166B8E1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app */;
-			productType = "com.apple.product-type.application.watchapp";
-		};
-		F0F264DF1A1D2757007A2066 /* XMCShared */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F0F264F91A1D2757007A2066 /* Build configuration list for PBXNativeTarget "XMCShared" */;
-			buildPhases = (
-				F0F264DB1A1D2757007A2066 /* Sources */,
-				F0F264DC1A1D2757007A2066 /* Frameworks */,
-				F0F264DD1A1D2757007A2066 /* Headers */,
-				F0F264DE1A1D2757007A2066 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = XMCShared;
-			productName = shared;
-			productReference = F0F264E01A1D2757007A2066 /* XMCShared.framework */;
-			productType = "com.apple.product-type.framework";
+			productType = "com.apple.product-type.application.watchapp2";
 		};
 		F0FFD1921A1CDAA700738E63 /* dojo-apple-watch */ = {
 			isa = PBXNativeTarget;
@@ -322,14 +273,13 @@
 				F0FFD18F1A1CDAA700738E63 /* Sources */,
 				F0FFD1901A1CDAA700738E63 /* Frameworks */,
 				F0FFD1911A1CDAA700738E63 /* Resources */,
-				F0166BA21A1CF08500B4A9A2 /* Embed App Extensions */,
 				F0166BF41A1D080000B4A9A2 /* Embed Frameworks */,
+				F0D106971C8CB7050080E8B9 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F0166B9A1A1CF08500B4A9A2 /* PBXTargetDependency */,
-				F0F264F61A1D2757007A2066 /* PBXTargetDependency */,
+				F0D106941C8CB7050080E8B9 /* PBXTargetDependency */,
 			);
 			name = "dojo-apple-watch";
 			productName = "dojo-apple-watch";
@@ -342,16 +292,15 @@
 		F0FFD18B1A1CDAA700738E63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "David McGraw";
 				TargetAttributes = {
 					F0166B7B1A1CF08500B4A9A2 = {
 						CreatedOnToolsVersion = 6.2;
 					};
 					F0166B8D1A1CF08500B4A9A2 = {
-						CreatedOnToolsVersion = 6.2;
-					};
-					F0F264DF1A1D2757007A2066 = {
 						CreatedOnToolsVersion = 6.2;
 					};
 					F0FFD1921A1CDAA700738E63 = {
@@ -375,7 +324,6 @@
 				F0FFD1921A1CDAA700738E63 /* dojo-apple-watch */,
 				F0166B7B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension */,
 				F0166B8D1A1CF08500B4A9A2 /* dojo-apple-watch Watch App */,
-				F0F264DF1A1D2757007A2066 /* XMCShared */,
 			);
 		};
 /* End PBXProject section */
@@ -385,7 +333,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0166B8F1A1CF08500B4A9A2 /* dojo-apple-watch Watch App.app in Resources */,
 				F0166B8B1A1CF08500B4A9A2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,13 +343,6 @@
 			files = (
 				F0166B961A1CF08500B4A9A2 /* Interface.storyboard in Resources */,
 				F0166B981A1CF08500B4A9A2 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F0F264DE1A1D2757007A2066 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,13 +368,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F0F264DB1A1D2757007A2066 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F0FFD18F1A1CDAA700738E63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,20 +381,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F0166B911A1CF08500B4A9A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0166B8D1A1CF08500B4A9A2 /* dojo-apple-watch Watch App */;
-			targetProxy = F0166B901A1CF08500B4A9A2 /* PBXContainerItemProxy */;
-		};
-		F0166B9A1A1CF08500B4A9A2 /* PBXTargetDependency */ = {
+		F0D106911C8CB7050080E8B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F0166B7B1A1CF08500B4A9A2 /* dojo-apple-watch WatchKit Extension */;
-			targetProxy = F0166B991A1CF08500B4A9A2 /* PBXContainerItemProxy */;
+			targetProxy = F0D106901C8CB7050080E8B9 /* PBXContainerItemProxy */;
 		};
-		F0F264F61A1D2757007A2066 /* PBXTargetDependency */ = {
+		F0D106941C8CB7050080E8B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F0F264DF1A1D2757007A2066 /* XMCShared */;
-			targetProxy = F0F264F51A1D2757007A2066 /* PBXContainerItemProxy */;
+			target = F0166B8D1A1CF08500B4A9A2 /* dojo-apple-watch Watch App */;
+			targetProxy = F0D106931C8CB7050080E8B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -481,17 +409,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				IBSC_MODULE = dojo_apple_watch_WatchKit_Extension;
 				INFOPLIST_FILE = "dojo-apple-watch Watch App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igotit.dojo-apple-watch.watchapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -499,13 +429,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = dojo_apple_watch_WatchKit_Extension;
 				INFOPLIST_FILE = "dojo-apple-watch Watch App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igotit.dojo-apple-watch.watchapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -523,8 +455,12 @@
 				INFOPLIST_FILE = "dojo-apple-watch WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igotit.dojo-apple-watch.watchapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -538,57 +474,12 @@
 				INFOPLIST_FILE = "dojo-apple-watch WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igotit.dojo-apple-watch.watchapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F0F264FA1A1D2757007A2066 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = shared/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F0F264FB1A1D2757007A2066 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = shared/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -612,6 +503,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -682,6 +574,7 @@
 				INFOPLIST_FILE = "dojo-apple-watch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igotit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "dojo-apple-watch";
 				SWIFT_OBJC_BRIDGING_HEADER = "dojo-apple-watch-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -701,6 +594,7 @@
 				INFOPLIST_FILE = "dojo-apple-watch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igotit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "dojo-apple-watch";
 				SWIFT_OBJC_BRIDGING_HEADER = "dojo-apple-watch-Bridging-Header.h";
 			};
@@ -723,15 +617,6 @@
 			buildConfigurations = (
 				F0166BA01A1CF08500B4A9A2 /* Debug */,
 				F0166BA11A1CF08500B4A9A2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F0F264F91A1D2757007A2066 /* Build configuration list for PBXNativeTarget "XMCShared" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F0F264FA1A1D2757007A2066 /* Debug */,
-				F0F264FB1A1D2757007A2066 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

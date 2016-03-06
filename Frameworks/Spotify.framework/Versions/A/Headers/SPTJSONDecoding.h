@@ -1,10 +1,5 @@
-//
-//  SPTJSONDecoding.h
-//  Basic Auth
-//
-//  Created by Daniel Kennett on 14/11/2013.
 /*
- Copyright 2013 Spotify AB
+ Copyright 2015 Spotify AB
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -21,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** An object that supports decoding from JSON. */
 @protocol SPTJSONObject <NSObject>
 
 /** Initialise the object with the given decoded JSON response from the web API
@@ -81,6 +77,7 @@
 
 @end
 
+/** Base object for JSON based models. */
 @interface SPTJSONObjectBase : NSObject<SPTJSONObject>
 
 @property (nonatomic, readwrite, copy) id decodedJSONObject;

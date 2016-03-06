@@ -32,11 +32,11 @@ class XMCViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioSt
     var trackTimeInterval: NSTimeInterval = 0.0
     var trackTimer: NSTimer?
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginAvailableSession:", name: kSessionWasUpdated, object: nil)
-        
+
         // If we have a valid session then we can login
         if XMCSpotifyPlayer.sharedPlayer.isAuthenticated() {
             attemptLogin()
@@ -57,7 +57,7 @@ class XMCViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioSt
     }
     
     func attemptLogin() {
-        XMCSpotifyPlayer.sharedPlayer.loginSession(playbackDelegate: self, delegate: self, { (success) in
+        XMCSpotifyPlayer.sharedPlayer.loginSession(playbackDelegate: self, delegate: self, completed: { (success) in
             if success == false {
                 // Something went wrong! Assume we need to re-auth for now.
                 self.showLoginButton()
@@ -102,7 +102,7 @@ class XMCViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioSt
     // MARK: - Streaming Delegate
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangePlaybackStatus isPlaying: Bool) {
-        println("Playback status changed: \(isPlaying)")
+        print("Playback status changed: \(isPlaying)")
         
         if isPlaying == true {
             self.playAction.setImage(UIImage(named: "player-pause"), forState: UIControlState.Normal)
@@ -122,15 +122,17 @@ class XMCViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioSt
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeToTrack trackMetadata: [NSObject : AnyObject]!) {
-        println("Changed track: \(trackMetadata)")
+        print("Changed track: \(trackMetadata)")
         
         UIView.animateWithDuration(0.225, animations: {
             self.trackTitle.alpha = 0.0
             self.trackTime.alpha = 0.0
-        }, { _ in
+        }, completion: { _ in
             self.trackTitle.text = trackMetadata[SPTAudioStreamingMetadataTrackName] as? String
             
-            self.trackTimeInterval = trackMetadata[SPTAudioStreamingMetadataTrackDuration] as NSTimeInterval
+            if let interval = trackMetadata[SPTAudioStreamingMetadataTrackDuration] as? NSTimeInterval {
+                self.trackTimeInterval = interval
+            }
             self.trackTime.text = "Now Playing"
             
             UIView.animateWithDuration(0.225, animations: {
@@ -143,21 +145,21 @@ class XMCViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioSt
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: NSURL!) {
-        println("Track started")
+        print("Track started")
         refreshAlbumArt()
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didFailToPlayTrack trackUri: NSURL!) {
-        println("Playback failed to play")
+        print("Playback failed to play")
     }
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
-        println("Did login")
+        print("Did login")
         hideLoginButton()
     }
     
     func audioStreamingDidLogout(audioStreaming: SPTAudioStreamingController!) {
-        println("Did logout")
+        print("Did logout")
         showLoginButton()
     }
     
